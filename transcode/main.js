@@ -41,13 +41,13 @@ let copyToClip = () => {
 }
 
 //extra: wip this permission attack
-/* codeInput.addEventListener("click", function () {
+codeInput.addEventListener("click", function () {
   navigator.clipboard.readText().then(
     clipText => {
       codeInput.value = ''
       codeInput.value = clipText
     });
-}) */
+})
 
 //hide log output
 window.addEventListener("load", function () {

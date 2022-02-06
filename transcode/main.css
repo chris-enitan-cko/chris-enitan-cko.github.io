@@ -1,5 +1,6 @@
 /* general */
 body {
+  font-family: "Arial";
   margin: auto;
   margin-top: 10%;
   width: 100%;
@@ -7,6 +8,7 @@ body {
   text-align: center;
 }
 input[type="text"] {
+  font-family: "Arial";
   height: 30px;
   width: 50%;
   background-color: transparent;
@@ -22,12 +24,12 @@ input[type="text"] {
   font-size: 14px;
 }
 .codeBtn{
+  font-family: "Arial";
   height: auto;
     max-height: 45px;
     width: 42%;
     padding: 2%;
     font-size: 18px;
-    font-family: "Montserrat", sans-serif;
     color: #ffffc8;
     margin: 5px;
     background-color: #0c1142;
@@ -37,7 +39,7 @@ input[type="text"] {
 }
 .outputs{
   background-color: #bdd4f0;
-    width: 70%;
+    width: 90%;
     overflow: scroll;
     padding: 2px;
     margin: auto;
@@ -52,4 +54,8 @@ input[type="text"] {
 #idOutput{
   padding: 15px;
   font-size: 23px;
+}
+hr.dashed {
+  border-top: 3px dashed #bbb;
+  margin-top: 50px;
 }
