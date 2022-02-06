@@ -5,7 +5,7 @@ let codeInput = document.getElementById("codeInput")
 
 //logger
 let outer = (e, msg) => {
-  e.style.display = 'block'
+  e.style.display = "block"
   e.innerHTML = msg
   setTimeout(function () {
     logOutput.style.display = "none"
@@ -25,12 +25,15 @@ let dance = (e) => {
       throw "Please put an id"
     }
     fetch(`https://devapi.ckotech.co/webhooktester/events/${e}/${codeValue}`, requestOptions)
+      .then((response) => {
+        if (response.status != 200) {
+          outer(logOutput, `Error: ${response.status}`)
+        }
+        return Promise.resolve(response)
+      })
       .then((response) => response.text())
       .then((result) => {
         outer(codeOutput, result)
-      })
-      .catch((error) => {
-        throw error
       })
   } catch (error) {
     outer(logOutput, error)
@@ -43,11 +46,10 @@ let copyToClip = () => {
   outer(logOutput, "ID Copied")
 }
 
-//extra: wip this permission attack
+//extra
 codeInput.addEventListener("click", function () {
-  navigator.clipboard.readText().then(
-    clipText => {
-      codeInput.value = ''
-      codeInput.value = clipText
-    });
+  navigator.clipboard.readText().then((clipText) => {
+    codeInput.value = ""
+    codeInput.value = clipText
+  })
 })
