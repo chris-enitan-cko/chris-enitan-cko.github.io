@@ -10,7 +10,7 @@ body {
 input[type="text"] {
   font-family: "Arial";
   height: 30px;
-  width: 50%;
+  width: 70%;
   background-color: transparent;
   border: 1px solid #1a2739;
   border-left: none;
@@ -21,7 +21,7 @@ input[type="text"] {
   padding: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: 16px;
 }
 .codeBtn{
   font-family: "Arial";
