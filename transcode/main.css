@@ -1,0 +1,55 @@
+/* general */
+body {
+  margin: auto;
+  margin-top: 10%;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+input[type="text"] {
+  height: 30px;
+  width: 50%;
+  background-color: transparent;
+  border: 1px solid #1a2739;
+  border-left: none;
+  border-right: none;
+  border-radius: 0px;
+  color: #28549a;
+  outline: none;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.codeBtn{
+  height: auto;
+    max-height: 45px;
+    width: 42%;
+    padding: 2%;
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    color: #ffffc8;
+    margin: 5px;
+    background-color: #0c1142;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.outputs{
+  background-color: #bdd4f0;
+    width: 70%;
+    overflow: scroll;
+    padding: 2px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+#logOutput{
+  background-color: #f0ecbd;
+  display: none;
+}
+#idOutput{
+  padding: 15px;
+  font-size: 23px;
+}
