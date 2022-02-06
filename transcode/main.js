@@ -7,6 +7,9 @@ let codeInput = document.getElementById("codeInput")
 let outer = (e, msg) => {
   e.style.display = 'block'
   e.innerHTML = msg
+  setTimeout(function () {
+    logOutput.style.display = "none"
+  }, 1200)
 }
 
 //engine
@@ -47,11 +50,4 @@ codeInput.addEventListener("click", function () {
       codeInput.value = ''
       codeInput.value = clipText
     });
-})
-
-//hide log output
-window.addEventListener("load", function () {
-  setInterval(function () {
-    logOutput.style.display = "none"
-  }, 1500)
 })
