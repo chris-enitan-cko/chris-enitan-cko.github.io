@@ -28,6 +28,7 @@ let dance = (e) => {
       .then((response) => {
         if (response.status != 200) {
           outer(logOutput, `Error: ${response.status}`)
+          return Promise.reject(response)
         }
         return Promise.resolve(response)
       })
@@ -35,6 +36,10 @@ let dance = (e) => {
       .then((result) => {
         outer(codeOutput, result)
       })
+      .catch((error) => {
+        console.log(error)
+        outer(logOutput, `Error: ${error.status}`)
+    })
   } catch (error) {
     outer(logOutput, error)
   }
