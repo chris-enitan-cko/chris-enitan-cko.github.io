@@ -37,6 +37,25 @@ input[type="text"] {
     border-radius: 6px;
     cursor: pointer;
 }
+.auxBtn{
+  font-family: "Arial";
+  height: auto;
+    max-height: 45px;
+    width: 42%;
+    padding: 2%;
+    font-size: 18px;
+    color: #0c1142;
+    margin: 5px;
+    background-color: #fff;
+    border: 2px solid #0c1142;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.auxBtn:hover{
+  background-color: #0c1142;
+  color: #ffffc8;
+  border: none;
+}
 .outputs{
   background-color: #bdd4f0;
     width: 90%;

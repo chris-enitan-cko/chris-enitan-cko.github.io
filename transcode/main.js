@@ -2,8 +2,13 @@
 let codeOutput = document.getElementById("idOutput")
 let logOutput = document.getElementById("logOutput")
 let codeInput = document.getElementById("codeInput")
+const evsBtn = document.querySelectorAll(".evsBtn")
 
-//logger
+/**
+ * Prints a string msg into a node e
+ * @param {*} e 
+ * @param {*} msg 
+ */
 let outer = (e, msg) => {
   e.style.display = "block"
   e.innerHTML = msg
@@ -35,6 +40,13 @@ let dance = (e) => {
       .then((response) => response.text())
       .then((result) => {
         outer(codeOutput, result)
+        //append evs links to decoded id
+        if (e === 'decode') {
+          for (let i = 0; i < evsBtn.length; i++) {
+            const link = evsBtn[i].getAttribute("href");
+            evsBtn[i].setAttribute("href", `${link}-${result}`);
+          }
+        }
       })
       .catch((error) => {
         console.log(error)
