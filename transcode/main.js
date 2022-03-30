@@ -2,8 +2,13 @@
 let codeOutput = document.getElementById("idOutput")
 let logOutput = document.getElementById("logOutput")
 let codeInput = document.getElementById("codeInput")
+const evsBtn = document.querySelectorAll(".evsBtn")
 
-//logger
+/**
+ * Prints and displays a string msg into a node e then hides node after 1200ms
+ * @param {*} e 
+ * @param {*} msg 
+ */
 let outer = (e, msg) => {
   e.style.display = "block"
   e.innerHTML = msg
@@ -12,7 +17,10 @@ let outer = (e, msg) => {
   }, 1200)
 }
 
-//engine
+/**
+ * Fetch id de-encode result, inserts result into EVS DOM buttons
+ * @param {*} e 
+ */
 let dance = (e) => {
   var requestOptions = {
     method: "GET",
@@ -35,6 +43,13 @@ let dance = (e) => {
       .then((response) => response.text())
       .then((result) => {
         outer(codeOutput, result)
+        //append evs links to decoded id
+        if (e === 'decode') {
+          for (let i = 0; i < evsBtn.length; i++) {
+            const link = evsBtn[i].getAttribute("href");
+            evsBtn[i].setAttribute("href", `${link}-${result}`);
+          }
+        }
       })
       .catch((error) => {
         console.log(error)
@@ -45,13 +60,13 @@ let dance = (e) => {
   }
 }
 
-//assit ui
+//copy to clipboard button
 let copyToClip = () => {
   navigator.clipboard.writeText(codeOutput.innerHTML.toString())
-  outer(logOutput, "ID Copied")
+  outer(logOutput, "Code Copied to clipboard")
 }
 
-//extra
+//paste from clipboard into id form field
 codeInput.addEventListener("click", function () {
   navigator.clipboard.readText().then((clipText) => {
     codeInput.value = ""
