@@ -6,8 +6,8 @@ const evsBtn = document.querySelectorAll(".evsBtn")
 
 /**
  * Prints and displays a string msg into a node e then hides node after 1200ms
- * @param {*} e 
- * @param {*} msg 
+ * @param {*} e
+ * @param {*} msg
  */
 let outer = (e, msg) => {
   e.style.display = "block"
@@ -19,7 +19,7 @@ let outer = (e, msg) => {
 
 /**
  * Fetch id de-encode result, inserts result into EVS DOM buttons
- * @param {*} e 
+ * @param {*} e
  */
 let dance = (e) => {
   var requestOptions = {
@@ -44,17 +44,20 @@ let dance = (e) => {
       .then((result) => {
         outer(codeOutput, result)
         //append evs links to decoded id
-        if (e === 'decode') {
+        if (e === "decode") {
           for (let i = 0; i < evsBtn.length; i++) {
-            const link = evsBtn[i].getAttribute("href");
-            evsBtn[i].setAttribute("href", `${link}-${result}`);
+            const id = evsBtn[i].getAttribute("id")
+            evsBtn[i].setAttribute(
+              "href",
+              `http://eventstore-${id}.cko.lon:2113/web/index.html#/streams/Gateway.AlternativeCharge-${result}`
+            )
           }
         }
       })
       .catch((error) => {
         console.log(error)
         outer(logOutput, `Error: ${error.status}`)
-    })
+      })
   } catch (error) {
     outer(logOutput, error)
   }
