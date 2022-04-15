@@ -49,7 +49,7 @@ let dance = (e) => {
             const id = evsBtn[i].getAttribute("id")
             evsBtn[i].setAttribute(
               "href",
-              `http://eventstore-${id}.cko.lon:2113/web/index.html#/streams/Gateway.AlternativeCharge-${result}`
+              `http://${id}:2113/web/index.html#/streams/Gateway.AlternativeCharge-${result}`
             )
           }
         }
