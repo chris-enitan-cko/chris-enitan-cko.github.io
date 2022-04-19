@@ -23,54 +23,54 @@ input[type="text"] {
   margin-bottom: 10px;
   font-size: 16px;
 }
-.codeBtn{
+.codeBtn {
   font-family: "Arial";
   height: auto;
-    max-height: 45px;
-    width: 42%;
-    padding: 2%;
-    font-size: 18px;
-    color: #ffffc8;
-    margin: 5px;
-    background-color: #0c1142;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+  max-height: 45px;
+  width: 42%;
+  padding: 2%;
+  font-size: 18px;
+  color: #ffffc8;
+  margin: 5px;
+  background-color: #0c1142;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
-.auxBtn{
+.auxBtn {
   font-family: "Arial";
   height: auto;
-    max-height: 45px;
-    width: 42%;
-    padding: 2%;
-    font-size: 18px;
-    color: #0c1142;
-    margin: 5px;
-    background-color: #fff;
-    border: 2px solid #0c1142;
-    border-radius: 6px;
-    cursor: pointer;
+  max-height: 45px;
+  width: auto;
+  padding: 2%;
+  font-size: 18px;
+  color: #0c1142;
+  margin: 5px;
+  background-color: #ebedff;
+  border: 2px solid #0c1142;
+  border-radius: 6px;
+  cursor: pointer;
 }
-.auxBtn:hover{
+.auxBtn:hover {
   background-color: #0c1142;
   color: #ffffc8;
   border: none;
 }
-.outputs{
+.outputs {
   background-color: #bdd4f0;
-    width: 90%;
-    overflow: scroll;
-    padding: 2px;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+  width: 90%;
+  overflow: scroll;
+  padding: 2px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
-#logOutput{
+#logOutput {
   background-color: #f0ecbd;
   display: none;
 }
-#idOutput{
+#idOutput {
   padding: 15px;
   font-size: 23px;
 }
