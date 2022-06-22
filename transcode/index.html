@@ -19,13 +19,30 @@
     <button onclick="copyToClip()" class="codeBtn">Copy</button>
 
     <hr class="dashed" />
-    <p>Open On EVS MBC:</p>
+    <p>Open On Public EVS MBC:</p>
     <a class="evsBtn" id="eventstore-qa.cko.lon" target="_blank" href=""><button class="auxBtn">QA</button></a>
     <a class="evsBtn" id="eventstore-sb.cko.lon" target="_blank" href=""><button class="auxBtn">SANDBOX</button></a>
 
     <hr class="dashed" />
-    <p>Open On EVS NAS:</p>
+    <p>Open On Public EVS NAS:</p>
     <a class="evsBtn" id="evs-nas-qa.cko.lon" target="_blank" href=""><button class="auxBtn">QA</button></a>
     <a class="evsBtn" id="eventstore-nas.sbox.internal" target="_blank" href=""><button class="auxBtn">SANDBOX</button></a>
+
+    <hr class="dashed" />
+    <p>Open On Private EVS MBC:</p>
+    <div id="evsCells">
+      <div id="evsSelect" class="evsSwitch">
+        <select>
+          <option>iDeal</option>
+          <option>Whitelabel</option>
+          <option>Sofort</option>
+        </select>
+      </div>
+      <div id="envSelect" class="evsSwitch">
+        <a class="evsBtn" id="evs-nas-qa.cko.lon" target="_blank" href=""><button class="auxBtn">QA</button></a>
+        <br />
+        <a class="evsBtn" id="eventstore-nas.sbox.internal" target="_blank" href=""><button class="auxBtn">SANDBOX</button></a>
+      </div>
+    </div>
   </body>
 </html>

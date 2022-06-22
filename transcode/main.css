@@ -3,6 +3,7 @@ body {
   font-family: "Arial";
   margin: auto;
   margin-top: 10%;
+  margin-bottom: 10%;
   width: 100%;
   max-width: 600px;
   text-align: center;
@@ -77,4 +78,16 @@ input[type="text"] {
 hr.dashed {
   border-top: 3px dashed #bbb;
   margin-top: 50px;
+}
+.evsSwitch {
+  display: inline-block;
+}
+#evsCells{
+  width: 100%;
+}
+#evsSelect {
+  width: 80%;
+}
+#envSelect {
+  width: 19%;
 }
