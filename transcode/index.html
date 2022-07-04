@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Transcode</title>
+    <title>Transcode for Event store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.1" />
-    <script src="main.js?v=1.1" async defer></script>
+    <script src="main.js?v=1.2" async defer></script>
   </head>
   <body>
     <p id="logOutput" class="outputs"></p>
     <input id="codeInput" type="text" placeholder="...pastes ID here" /><br />
-    <button onclick="dance('encode')" class="codeBtn">Encode</button>
-    <button onclick="dance('decode')" class="codeBtn">Decode</button>
+    <button onclick="getCode('encode')" class="codeBtn">Encode</button>
+    <button onclick="getCode('decode')" class="codeBtn">Decode</button>
     <hr class="dashed" />
     <p id="idOutput" class="outputs"></p>
     <button onclick="copyToClip()" class="codeBtn">Copy</button>
@@ -29,19 +29,22 @@
     <a class="evsBtn" id="eventstore-nas.sbox.internal" target="_blank" href=""><button class="auxBtn">SANDBOX</button></a>
 
     <hr class="dashed" />
-    <p>Open On Private EVS MBC:</p>
+    <p>Open On Private APM EVS:</p>
     <div id="evsCells">
       <div id="evsSelect" class="evsSwitch">
-        <select>
+        <select id="apmSelector" onchange="system.setPrivateLinks()">
           <option>iDeal</option>
           <option>Whitelabel</option>
           <option>Sofort</option>
+          <option>KNet</option>
         </select>
       </div>
       <div id="envSelect" class="evsSwitch">
-        <a class="evsBtn" id="evs-nas-qa.cko.lon" target="_blank" href=""><button class="auxBtn">QA</button></a>
+        <a class="privateEvsBtn" id="eventstore-apm.qa.internal" target="_blank" href=""><button class="auxBtn privateAux">QA</button></a>
         <br />
-        <a class="evsBtn" id="eventstore-nas.sbox.internal" target="_blank" href=""><button class="auxBtn">SANDBOX</button></a>
+        <a class="privateEvsBtn" id="eventstore-apm.sbox.internal" target="_blank" href=""
+          ><button class="auxBtn privateAux">SANDBOX</button></a
+        >
       </div>
     </div>
   </body>
