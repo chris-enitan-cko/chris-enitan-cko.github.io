@@ -19,12 +19,12 @@
     <button onclick="copyToClip()" class="codeBtn">Copy</button>
 
     <hr class="dashed" />
-    <p>Open On Public EVS MBC:</p>
+    <p>Open On Public EVS <span style="text-decoration: underline"> MBC:</span></p>
     <a class="evsBtn" id="eventstore-qa.cko.lon" target="_blank" href=""><button class="auxBtn">QA</button></a>
     <a class="evsBtn" id="eventstore-sb.cko.lon" target="_blank" href=""><button class="auxBtn">SANDBOX</button></a>
 
     <hr class="dashed" />
-    <p>Open On Public EVS NAS:</p>
+    <p>Open On Public EVS <span style="text-decoration: underline"> NAS:</span></p>
     <a class="evsBtn" id="evs-nas-qa.cko.lon" target="_blank" href=""><button class="auxBtn">QA</button></a>
     <a class="evsBtn" id="eventstore-nas.sbox.internal" target="_blank" href=""><button class="auxBtn">SANDBOX</button></a>
 
@@ -33,10 +33,21 @@
     <div id="evsCells">
       <div id="evsSelect" class="evsSwitch">
         <select id="apmSelector" onchange="system.setPrivateLinks()">
-          <option>iDeal</option>
-          <option>Whitelabel</option>
+          <option>iDEAL</option>
+          <option>WhiteLabel</option>
           <option>Sofort</option>
+          <option>iDEAL</option>
+          <option>Fawry</option>
+          <option>Giropay</option>
           <option>KNet</option>
+          <option>Klarna</option>
+          <option>Oxxo</option>
+          <option>PProSepa</option>
+          <option>PayPal</option>
+          <option>PostFinance</option>
+          <option>QPay</option>
+          <option>RapiPago</option>
+          <option>ReverseApiCore</option>
         </select>
       </div>
       <div id="envSelect" class="evsSwitch">
