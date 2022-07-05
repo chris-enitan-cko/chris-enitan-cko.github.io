@@ -3,70 +3,72 @@ let codeOutput = document.getElementById("idOutput")
 let logOutput = document.getElementById("logOutput")
 let codeInput = document.getElementById("codeInput")
 const evsBtn = document.querySelectorAll(".evsBtn")
+const privateEvsBtn = document.querySelectorAll(".privateEvsBtn")
 
-/**
- * Prints and displays a string msg into a node e then hides node after 1200ms
- * @param {*} e
- * @param {*} msg
- */
-let outer = (e, msg) => {
-  e.style.display = "block"
-  e.innerHTML = msg
+const logger = (domTarget, message) => {
+  domTarget.style.display = "block"
+  domTarget.innerHTML = message
   setTimeout(function () {
     logOutput.style.display = "none"
   }, 1200)
 }
 
+const system = {
+  setVisuals: (transcoded) => {
+    logger(codeOutput, transcoded)
+    logger(logOutput, `Value Transcoded`)
+  },
+
+  setLinks: (transcoded) => {
+    system.setPublicLinks(transcoded)
+    system.setPrivateLinks()
+  },
+
+  setPublicLinks: (transcoded) => {
+    evsBtn.forEach((element) => {
+      const domains = element.getAttribute("id")
+      element.setAttribute("href", `http://${domains}:2113/web/index.html#/streams/Gateway.AlternativeCharge-${transcoded}`)
+    })
+  },
+
+  setPrivateLinks: () => {
+    var selectedApm = document.getElementById("apmSelector").value
+    privateEvsBtn.forEach((element) => {
+      const domains = element.getAttribute("id")
+      element.setAttribute("href", `http://${domains}:2113/web/index.html#/streams/${selectedApm}.Payment-${codeOutput.innerHTML}`)
+    })
+  },
+}
+
 /**
  * Fetch id de-encode result, inserts result into EVS DOM buttons
- * @param {*} e
+ * @param {*} request
  */
-let dance = (e) => {
-  var requestOptions = {
+const getCode = async (request) => {
+  let codeValue = document.getElementById("codeInput").value
+  if (codeValue == "") {
+    logger(logOutput, "Please put an ID")
+    return false
+  }
+
+  const response = await fetch(`https://devapi.ckotech.co/webhooktester/events/${request}/${codeValue}`, {
     method: "GET",
     redirect: "follow",
+  })
+  if (response.status != 200) {
+    logger(logOutput, `Error: ${response.status}`)
+    return false
   }
-  let codeValue = document.getElementById("codeInput").value
-  //sanitisation
-  try {
-    if (codeValue == "") {
-      throw "Please put an id"
-    }
-    fetch(`https://devapi.ckotech.co/webhooktester/events/${e}/${codeValue}`, requestOptions)
-      .then((response) => {
-        if (response.status != 200) {
-          outer(logOutput, `Error: ${response.status}`)
-          return Promise.reject(response)
-        }
-        return Promise.resolve(response)
-      })
-      .then((response) => response.text())
-      .then((result) => {
-        outer(codeOutput, result)
-        //append evs links to decoded id
-        if (e === "decode") {
-          for (let i = 0; i < evsBtn.length; i++) {
-            const id = evsBtn[i].getAttribute("id")
-            evsBtn[i].setAttribute(
-              "href",
-              `http://${id}:2113/web/index.html#/streams/Gateway.AlternativeCharge-${result}`
-            )
-          }
-        }
-      })
-      .catch((error) => {
-        console.log(error)
-        outer(logOutput, `Error: ${error.status}`)
-      })
-  } catch (error) {
-    outer(logOutput, error)
-  }
+
+  const decodedVal = await response.text()
+  system.setVisuals(decodedVal)
+  if (request === "decode") system.setLinks(decodedVal)
 }
 
 //copy to clipboard button
 let copyToClip = () => {
   navigator.clipboard.writeText(codeOutput.innerHTML.toString())
-  outer(logOutput, "Code Copied to clipboard")
+  logger(logOutput, "Code Copied to clipboard")
 }
 
 //paste from clipboard into id form field
