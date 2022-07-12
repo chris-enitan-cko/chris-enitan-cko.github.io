@@ -8,7 +8,7 @@ body {
   max-width: 600px;
   text-align: center;
 }
-p{
+p {
   color: #0c1143;
   background-color: #bbbbbb;
   width: 37%;
@@ -77,6 +77,11 @@ input[type="text"] {
 #logOutput {
   background-color: #f0ecbd;
   display: none;
+  position: absolute;
+  top: 10%;
+  width: 50%;
+  max-width: 600px;
+  margin: auto;
 }
 #idOutput {
   padding: 15px;
@@ -89,7 +94,7 @@ hr.dashed {
 .evsSwitch {
   display: inline-block;
 }
-#evsCells{
+#evsCells {
   width: 100%;
 }
 #evsSelect {
@@ -98,13 +103,13 @@ hr.dashed {
 #envSelect {
   width: 19%;
 }
-#apmSelector{
+#apmSelector {
   color: #0c1143;
   padding: 8px 16px;
   border: 1px solid #0c1143;
   cursor: pointer;
   outline: none;
 }
-.privateAux{
+.privateAux {
   padding: 10px;
 }

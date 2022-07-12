@@ -6,7 +6,7 @@
     <title>Transcode for Event store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="favicon.png" />
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css?v=1.2" />
     <script src="main.js?v=1.2" async defer></script>
   </head>
   <body>
@@ -19,17 +19,17 @@
     <button onclick="copyToClip()" class="codeBtn">Copy</button>
 
     <hr class="dashed" />
-    <p>Open On Public EVS <span style="text-decoration: underline"> MBC:</span></p>
+    <p>Open AC <span style="text-decoration: underline"> MBC:</span></p>
     <a class="evsBtn" id="eventstore-qa.cko.lon" target="_blank" href=""><button class="auxBtn">QA</button></a>
     <a class="evsBtn" id="eventstore-sb.cko.lon" target="_blank" href=""><button class="auxBtn">SANDBOX</button></a>
 
     <hr class="dashed" />
-    <p>Open On Public EVS <span style="text-decoration: underline"> NAS:</span></p>
+    <p>Open AC <span style="text-decoration: underline"> NAS:</span></p>
     <a class="evsBtn" id="evs-nas-qa.cko.lon" target="_blank" href=""><button class="auxBtn">QA</button></a>
     <a class="evsBtn" id="eventstore-nas.sbox.internal" target="_blank" href=""><button class="auxBtn">SANDBOX</button></a>
 
     <hr class="dashed" />
-    <p>Open On Private APM EVS:</p>
+    <p>Open Payments AC-Private:</p>
     <div id="evsCells">
       <div id="evsSelect" class="evsSwitch">
         <select id="apmSelector" onchange="system.setPrivateLinks()">
@@ -58,5 +58,8 @@
         >
       </div>
     </div>
+
+    <hr class="dashed">
+    <a target='_blank' href="https://github.com/chris-enitan-cko/chris-enitan-cko.github.io">Forks and Pulls --></a>
   </body>
 </html>
