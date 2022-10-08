@@ -66,8 +66,9 @@ const getCode = async (request) => {
 }
 
 //copy to clipboard button
-let copyToClip = () => {
-  navigator.clipboard.writeText(codeOutput.innerHTML.toString())
+let copyToClip = (append) => {
+  const text = append ?? ""
+  navigator.clipboard.writeText(text + codeOutput.innerHTML.toString())
   logger(logOutput, "Code Copied to clipboard")
 }
 
