@@ -7,6 +7,7 @@ body {
   width: 100%;
   max-width: 600px;
   text-align: center;
+  background-color: #eaeaea;
 }
 p {
   color: #0c1143;
@@ -14,6 +15,7 @@ p {
   width: 37%;
   height: auto;
   padding: 2%;
+  border-bottom: 2px solid #aaaaaa;
   border-radius: 5px;
 }
 input[type="text"] {
@@ -43,6 +45,11 @@ input[type="text"] {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+}
+.codeBtn:hover {
+  background-color: #ffffc8;
+  color: #0c1142;
+  border: none;
 }
 .auxBtn {
   font-family: "Arial";
@@ -76,12 +83,13 @@ input[type="text"] {
 }
 #logOutput {
   background-color: #f0ecbd;
+  color: #0c1143;
+  border-radius: 5px;
   display: none;
-  position: absolute;
-  top: 10%;
   width: 50%;
-  max-width: 600px;
   margin: auto;
+  position: sticky;
+  top: 5%;
 }
 #idOutput {
   padding: 15px;

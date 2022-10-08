@@ -16,20 +16,23 @@
     <button onclick="getCode('decode')" class="codeBtn">Decode</button>
     <hr class="dashed" />
     <p id="idOutput" class="outputs"></p>
-    <button onclick="copyToClip()" class="codeBtn">Copy</button>
+    <a href="#logOutput"><button onclick="copyToClip()" class="codeBtn">Copy</button></a>
+    <br>
+    <button onclick="copyToClip('pay_')" class="codeBtn">Copy as pay_</button>
+    <button onclick="copyToClip('act_')" class="codeBtn">Copy as act_</button>
 
     <hr class="dashed" />
-    <p>Open AC <span style="text-decoration: underline"> MBC:</span></p>
+    <p>Open on AC <span style="text-decoration: underline"> MBC:</span></p>
     <a class="evsBtn" id="eventstore-qa.cko.lon" target="_blank" href=""><button class="auxBtn">QA</button></a>
     <a class="evsBtn" id="eventstore-sb.cko.lon" target="_blank" href=""><button class="auxBtn">SANDBOX</button></a>
 
     <hr class="dashed" />
-    <p>Open AC <span style="text-decoration: underline"> NAS:</span></p>
+    <p>Open on AC <span style="text-decoration: underline"> NAS:</span></p>
     <a class="evsBtn" id="evs-nas-qa.cko.lon" target="_blank" href=""><button class="auxBtn">QA</button></a>
     <a class="evsBtn" id="eventstore-nas.sbox.internal" target="_blank" href=""><button class="auxBtn">SANDBOX</button></a>
 
     <hr class="dashed" />
-    <p>Open Payments AC-Private:</p>
+    <p>Open APM Stream:</p>
     <div id="evsCells">
       <div id="evsSelect" class="evsSwitch">
         <select id="apmSelector" onchange="system.setPrivateLinks()">
