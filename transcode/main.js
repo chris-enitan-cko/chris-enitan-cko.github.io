@@ -1,13 +1,13 @@
 //variables
-let codeOutput = document.getElementById("idOutput")
-let logOutput = document.getElementById("logOutput")
-let codeInput = document.getElementById("codeInput")
-const evsBtn = document.querySelectorAll(".evsBtn")
-const privateEvsBtn = document.querySelectorAll(".privateEvsBtn")
+let codeOutput = document.getElementById("idOutput"),
+  logOutput = document.getElementById("logOutput"),
+  codeInput = document.getElementById("codeInput")
+const evsBtn = document.querySelectorAll(".evsBtn"),
+  privateEvsBtn = document.querySelectorAll(".privateEvsBtn")
 
 const logger = (domTarget, message) => {
-  domTarget.style.display = "block"
   domTarget.innerHTML = message
+  domTarget.style.display = "block"
   setTimeout(function () {
     logOutput.style.display = "none"
   }, 1200)
